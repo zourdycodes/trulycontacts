@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { useForm } from "../../helpers/useForm";
+
 import { register } from "../../contexts/actions/register";
+import { RegisterLayout } from "../../layout";
 
 export const RegisterContainer = () => {
-  return (
-    <div>
-      <h1>Hello World</h1>
-      <Link to="/auth/login">login</Link>
-    </div>
-  );
+  return <RegisterLayout useForm={useForm} />;
 };
