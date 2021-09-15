@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useContext, useEffect } from "react";
 import { GlobalContext } from "../../context/Provider";
 import { register } from "../../context/actions/auth/register";
 import { useHistory } from "react-router-dom";
 
-export default () => {
+const useForm = () => {
   const [form, setForm] = useState({});
   const [fieldErrors, setFieldErrors] = useState({});
 
@@ -30,7 +31,6 @@ export default () => {
     }
   }, [data]);
 
-
   const onChange = (e, { name, value }) => {
     setForm({ ...form, [name]: value });
   };
@@ -49,3 +49,5 @@ export default () => {
 
   return { form, onChange, loading, fieldErrors, registerFormValid, onSubmit };
 };
+
+export default useForm;
