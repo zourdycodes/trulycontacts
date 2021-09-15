@@ -1,8 +1,7 @@
 import axios from "axios";
 
-export default (history = null) => {
+const axiosInstance = (history = null) => {
   const baseURL = process.env.REACT_APP_BACKEND_URL;
-
 
   let headers = {};
 
@@ -45,3 +44,5 @@ export default (history = null) => {
 
   return axiosInstance;
 };
+
+export default axiosInstance;

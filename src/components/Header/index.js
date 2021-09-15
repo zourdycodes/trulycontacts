@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Menu, Image, Button, Icon, Input } from "semantic-ui-react";
-import { Link, useLocation, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import logo from "../../assets/images/logo.svg";
 import logout from "../../context/actions/auth/logout";
 import { GlobalContext } from "../../context/Provider";
