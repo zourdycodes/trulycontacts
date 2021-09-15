@@ -26,6 +26,8 @@ const ContactsContainer = () => {
     if (data.length === 0) {
       getContacts(history)(contactsDispatch);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

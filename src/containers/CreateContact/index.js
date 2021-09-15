@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import Header from "../../components/Header";
 import CreateContact from "../../layout/Contacts/Create";
 import createContact from "../../context/actions/contacts/createContact";
 import clearCreateContact from "../../context/actions/contacts/clearCreateContact";
@@ -14,7 +13,7 @@ const CreateContactContainer = () => {
   const {
     contactsDispatch,
     contactsState: {
-      addContact: { loading, error, data },
+      addContact: { loading, data },
     },
   } = useContext(GlobalContext);
 
@@ -34,6 +33,8 @@ const CreateContactContainer = () => {
     return () => {
       clearCreateContact()(contactsDispatch);
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const formIsHalfFilled =
