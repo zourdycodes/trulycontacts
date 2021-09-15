@@ -2,7 +2,6 @@ import React from "react";
 import {
   Placeholder,
   List,
-  Image,
   Container,
   Message,
   Header,

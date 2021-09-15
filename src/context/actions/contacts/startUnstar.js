@@ -6,7 +6,7 @@ import {
 import axiosInstance from "../../../helpers/axiosInstance";
 import { CONNECTION_ERROR } from "../../../constants/api";
 
-export default (id, is_favorite) => (dispatch) => {
+const starUnstar = (id, is_favorite) => (dispatch) => {
   dispatch({
     type: ADD_REMOVE_STAR_LOADING,
     payload: id,
@@ -27,3 +27,5 @@ export default (id, is_favorite) => (dispatch) => {
       });
     });
 };
+
+export default starUnstar;

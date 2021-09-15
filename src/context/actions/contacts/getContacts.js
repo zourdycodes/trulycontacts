@@ -6,7 +6,7 @@ import {
   CONTACTS_LOAD_ERROR,
 } from "../../../constants/actionTypes";
 
-export default (history) => (dispatch) => {
+const getContacts = (history) => (dispatch) => {
   dispatch({
     type: CONTACTS_LOADING,
   });
@@ -25,3 +25,5 @@ export default (history) => (dispatch) => {
       });
     });
 };
+
+export default getContacts;

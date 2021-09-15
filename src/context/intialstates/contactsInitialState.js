@@ -1,4 +1,4 @@
-export default {
+const contactsInitialState = {
   contacts: {
     loading: false,
     error: null,
@@ -12,3 +12,5 @@ export default {
     data: null,
   },
 };
+
+export default contactsInitialState;

@@ -1,12 +1,12 @@
 import {
   DELETE_CONTACT_LOADING,
-  CONTACTS_LOAD_SUCCESS,
+  // CONTACTS_LOAD_SUCCESS,
   DELETE_CONTACT_ERROR,
   DELETE_CONTACT_SUCCESS,
 } from "../../../constants/actionTypes";
 import axiosInstance from "../../../helpers/axiosInstance";
 
-export default (id) => (dispatch) => {
+const deleteContacts = (id) => (dispatch) => {
   dispatch({
     type: DELETE_CONTACT_LOADING,
     payload: id,
@@ -28,3 +28,5 @@ export default (id) => (dispatch) => {
       });
     });
 };
+
+export default deleteContacts;
