@@ -1,29 +1,39 @@
-import {
-  RegisterContainer,
-  LoginContainer,
-  ContactsContainer,
-  CreateContactContainer,
-} from "../containers";
+import { lazy } from "react";
 
-export const routes = [
+import RegisterComponent from "../containers/Register";
+import LoginComponent from "../containers/Login";
+import ContactsComponent from "../containers/Contacts";
+
+const CreateContactComponent = lazy(() =>
+  import("../containers/CreateContact")
+);
+
+const routes = [
   {
     path: "/auth/register",
-    Component: RegisterContainer,
+    component: RegisterComponent,
     title: "Register",
+    needsAuth: false,
   },
+
   {
     path: "/auth/login",
-    Component: LoginContainer,
+    component: LoginComponent,
     title: "Login",
-  },
-  {
-    path: "/",
-    Component: ContactsContainer,
-    title: "Contacts",
+    needsAuth: false,
   },
   {
     path: "/contacts/create",
-    Component: CreateContactContainer,
+    component: CreateContactComponent,
     title: "Create Contact",
+    needsAuth: true,
+  },
+  {
+    path: "/",
+    component: ContactsComponent,
+    title: "Contacts",
+    needsAuth: true,
   },
 ];
+
+export default routes;
