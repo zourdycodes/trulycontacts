@@ -1,6 +1,11 @@
 import { useState } from "react";
 
+import { useGlobalContext } from "./useGlobalContext";
+import { register } from "../contexts/actions/register";
+
 export const useForm = () => {
+  const { authDispatch } = useGlobalContext();
+
   const [form, setForm] = useState({});
 
   const onChange = (e, { name, value }) => {
@@ -14,5 +19,9 @@ export const useForm = () => {
     !form.email?.length ||
     !form.password?.length;
 
-  return { form, onChange, registerValidator };
+  const onSubmit = () => {
+    register(form)(authDispatch);
+  };
+
+  return { form, onChange, registerValidator, onSubmit };
 };

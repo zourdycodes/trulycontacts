@@ -10,7 +10,7 @@ import {
 import { Header } from "../../components/Header";
 
 export const RegisterLayout = ({ useForm }) => {
-  const { form, onChange, registerValidator } = useForm();
+  const { form, onChange, registerValidator, onSubmit } = useForm();
 
   return (
     <div>
@@ -77,7 +77,13 @@ export const RegisterLayout = ({ useForm }) => {
                 />
               </Form.Field>
 
-              <Button disabled={registerValidator} fluid primary type="submit">
+              <Button
+                onClick={onSubmit}
+                disabled={registerValidator}
+                fluid
+                primary
+                type="submit"
+              >
                 Submit
               </Button>
             </Form>

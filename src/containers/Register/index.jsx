@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import { useForm } from "../../helpers/useForm";
 
-import { register } from "../../contexts/actions/register";
 import { RegisterLayout } from "../../layout";
 
 export const RegisterContainer = () => {
