@@ -1,13 +1,17 @@
 import React from "react";
 import { render } from "react-dom";
 
+import { GlobalProvider } from "./contexts/Provider";
+
 import { App } from "./app";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
 render(
   <React.StrictMode>
-    <App />
+    <GlobalProvider>
+      <App />
+    </GlobalProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
