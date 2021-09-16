@@ -29,7 +29,7 @@ const RenderRoute = (route) => {
   );
 };
 
-function App() {
+export const App = () => {
   const [confirmOpen, setConfirmOpen] = useState(true);
   return (
     <GlobalProvider>
@@ -53,6 +53,4 @@ function App() {
       </Router>
     </GlobalProvider>
   );
-}
-
-export default App;
+};
